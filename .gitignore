@@ -15,9 +15,16 @@ xs/assertlib*
 /src/TAGS
 /.vscode/
 build-linux/*
+build-default/
+build-ubuntu/
+build-logs/
 deps/build*
 deps/build-linux/*
 **/.DS_Store
 **/.idea/
 .pkg_cache
 CMakeUserPresets.json
+
+# stray CMake-4 test build dir
+build-cm4/
+deps/build-cm4/
