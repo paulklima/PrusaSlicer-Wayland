@@ -4,6 +4,10 @@
 set(SLIC3R_APP_NAME "PrusaSlicer")
 set(SLIC3R_APP_KEY "PrusaSlicer")
 set(SLIC3R_VERSION "2.9.6")
-set(SLIC3R_BUILD_ID "PrusaSlicer-${SLIC3R_VERSION}+UNKNOWN")
+# Custom fork build identity (this release branch only). SLIC3R_VERSION stays a pure
+# semver string so the online update check keeps working; the modification list is
+# shown next to the version in the About dialog.
+set(SLIC3R_BUILD_ID "PrusaSlicer-${SLIC3R_VERSION}+wayland.mmu.cmake4")
+set(SLIC3R_MODIFICATIONS "Wayland · MMU temp-sync · CMake 4")
 set(SLIC3R_RC_VERSION "2,9,6,0")
 set(SLIC3R_RC_VERSION_DOTS "2.9.6.0")
