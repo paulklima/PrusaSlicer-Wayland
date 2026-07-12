@@ -5,5 +5,8 @@
 #define SLIC3R_APP_KEY "@SLIC3R_APP_KEY@"
 #define SLIC3R_VERSION "@SLIC3R_VERSION@"
 #define SLIC3R_BUILD_ID "@SLIC3R_BUILD_ID@"
+// Fork identity: human-readable list of custom modifications in this build,
+// shown next to the version in the About dialog. Empty for a stock build.
+#define SLIC3R_MODIFICATIONS "@SLIC3R_MODIFICATIONS@"
 
 #endif /* __SLIC3R_VERSION_H */

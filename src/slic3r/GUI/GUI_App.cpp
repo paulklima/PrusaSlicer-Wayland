@@ -300,6 +300,8 @@ private:
 
             // dynamically get the version to display
             version = _L("Version") + " " + std::string(SLIC3R_VERSION);
+            if (!std::string(SLIC3R_MODIFICATIONS).empty())
+                version += " [" + _L("modified") + ": " + wxString::FromUTF8(SLIC3R_MODIFICATIONS) + "]";
 
             // credits infornation
             credits = "\n" + title + " " +

@@ -12,6 +12,11 @@ cmake_minimum_required(VERSION 3.13)
 project(PrusaSlicer)
 
 include("version.inc")
+# Fork identity: optional list of custom modifications shown in the About dialog.
+# Stock/upstream builds leave it empty; release branches set it via version.inc.
+if (NOT DEFINED SLIC3R_MODIFICATIONS)
+    set(SLIC3R_MODIFICATIONS "")
+endif ()
 include(GNUInstallDirs)
 include(CMakeDependentOption)
 
