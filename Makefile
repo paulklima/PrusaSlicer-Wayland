@@ -16,6 +16,12 @@
 SHELL       := /bin/bash
 .SHELLFLAGS := -eo pipefail -c
 
+# CMake 4.0 (Ubuntu 26.04) removed compatibility with policies < 3.5, which the
+# vendored deps (Blosc, Boost, OCCT, ...) still request. Exporting this restores
+# the old floor for every cmake invocation, including the ExternalProject child
+# configures. Harmless on CMake 3.x. Verified building all 25 deps on CMake 4.2.
+export CMAKE_POLICY_VERSION_MINIMUM := 3.5
+
 JOBS      ?= $(shell nproc 2>/dev/null || echo 4)
 BUILD_DIR := build-ubuntu
 DEPS_DIR  := deps/build-ubuntu
