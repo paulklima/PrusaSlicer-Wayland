@@ -261,7 +261,16 @@ AboutDialog::AboutDialog()
             version_font.SetPointSize(11);
         #endif
         version->SetFont(version_font);
-        vsizer->Add(version, 0, wxALIGN_LEFT | wxBOTTOM, 10);
+        vsizer->Add(version, 0, wxALIGN_LEFT | wxBOTTOM, std::string(SLIC3R_FORK_ID).empty() ? 10 : 2);
+    }
+
+    // fork identity (only when this build carries one)
+    if (!std::string(SLIC3R_FORK_ID).empty()) {
+        wxStaticText* fork = new wxStaticText(this, wxID_ANY, wxString::FromUTF8(SLIC3R_FORK_ID), wxDefaultPosition, wxDefaultSize);
+        wxFont fork_font = GetFont();
+        fork_font.SetPointSize(fork_font.GetPointSize() - 1);
+        fork->SetFont(fork_font);
+        vsizer->Add(fork, 0, wxALIGN_LEFT | wxBOTTOM, 10);
     }
     
     // text
@@ -379,7 +388,11 @@ void AboutDialog::onCopyrightBtn(wxEvent &)
 void AboutDialog::onCopyToClipboard(wxEvent&)
 {
     wxTheClipboard->Open();
-    wxTheClipboard->SetData(new wxTextDataObject(_L("Version") + " " + std::string(SLIC3R_VERSION)));
+    wxString info = _L("Version") + " " + std::string(SLIC3R_VERSION);
+    if (!std::string(SLIC3R_FORK_ID).empty())
+        info += "\n" + wxString::FromUTF8(SLIC3R_FORK_ID);
+    info += "\n" + wxString::FromUTF8(SLIC3R_BUILD_ID);
+    wxTheClipboard->SetData(new wxTextDataObject(info));
     wxTheClipboard->Close();
 }
 

@@ -12,6 +12,29 @@ cmake_minimum_required(VERSION 3.13)
 project(PrusaSlicer)
 
 include("version.inc")
+
+# Fork: when the build id is still the version.inc placeholder (i.e. not stamped
+# by an official release build script), derive a descriptive id from the current
+# git tag/commit so every tagged build self-identifies in About / System Info.
+# Runs at configure time; reconfigure (or a clean build) picks up a new tag.
+if (SLIC3R_BUILD_ID MATCHES "UNKNOWN")
+    find_package(Git QUIET)
+    if (GIT_FOUND)
+        execute_process(
+            COMMAND "${GIT_EXECUTABLE}" describe --tags --always --dirty
+            WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+            OUTPUT_VARIABLE SLIC3R_GIT_DESCRIBE
+            OUTPUT_STRIP_TRAILING_WHITESPACE
+            ERROR_QUIET
+            RESULT_VARIABLE SLIC3R_GIT_RESULT)
+        if (SLIC3R_GIT_RESULT EQUAL 0 AND SLIC3R_GIT_DESCRIBE)
+            set(SLIC3R_BUILD_ID "${SLIC3R_APP_NAME}-${SLIC3R_GIT_DESCRIBE}")
+        endif ()
+    endif ()
+endif ()
+message(STATUS "SLIC3R_BUILD_ID: ${SLIC3R_BUILD_ID}")
+message(STATUS "SLIC3R_FORK_ID: ${SLIC3R_FORK_ID}")
+
 include(GNUInstallDirs)
 include(CMakeDependentOption)
 

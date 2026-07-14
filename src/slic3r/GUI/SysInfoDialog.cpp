@@ -53,6 +53,8 @@ std::string get_main_info(bool format_as_html)
     if (! wxGetApp().is_editor())
         boost::replace_first(build_id, SLIC3R_APP_NAME, GCODEVIEWER_APP_NAME);
     out << b_start << "Build:     " << b_end << build_id << line_end;
+    if (SLIC3R_FORK_ID[0] != '\0')
+        out << b_start << "Fork:      " << b_end << SLIC3R_FORK_ID << line_end;
 
     out << line_end;
     out << b_start << "Operating System:    "   << b_end << wxPlatformInfo::Get().GetOperatingSystemFamilyName() << line_end;

@@ -7,3 +7,7 @@ set(SLIC3R_VERSION "2.9.6")
 set(SLIC3R_BUILD_ID "PrusaSlicer-${SLIC3R_VERSION}+UNKNOWN")
 set(SLIC3R_RC_VERSION "2,9,6,0")
 set(SLIC3R_RC_VERSION_DOTS "2.9.6.0")
+
+# Fork identity — shown in the About and System Info dialogs so a fork build is
+# distinguishable from stock PrusaSlicer. Keep this line across version bumps.
+set(SLIC3R_FORK_ID "Wayland (GTK3 + EGL) · wxWidgets 3.3.3")
