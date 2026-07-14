@@ -3,6 +3,14 @@
 
 # PrusaSlicer
 
+> **This is a fork of [prusa3d/PrusaSlicer](https://github.com/prusa3d/PrusaSlicer)** (based on upstream 2.9.6)
+> adding native **Wayland** support (GTK3 + EGL), a **wxWidgets 3.3.3** upgrade, **CMake 4 / Ubuntu 26.04**
+> build support, and an MMU toolchange temperature-sync fix. Current release: **`v2.9.6-wayland-wx3.3.3`**.
+>
+> - **Build it:** `make` (see [`doc/How to build - Linux Wayland.md`](doc/How%20to%20build%20-%20Linux%20Wayland.md))
+> - **Contributing / working on the fork:** [`CLAUDE.md`](CLAUDE.md) (repo orientation for devs & agents)
+> - **Branches, releases, tagging:** [`doc/FORK-RELEASE-STRATEGY.md`](doc/FORK-RELEASE-STRATEGY.md)
+
 You may want to check the [PrusaSlicer project page](https://www.prusa3d.com/prusaslicer/).
 Prebuilt Windows, OSX and Linux binaries are available through the [git releases page](https://github.com/prusa3d/PrusaSlicer/releases) or from the [Prusa3D downloads page](https://www.prusa3d.com/drivers/). There are also [3rd party Linux builds available](https://github.com/prusa3d/PrusaSlicer/wiki/PrusaSlicer-on-Linux---binary-distributions).
 
