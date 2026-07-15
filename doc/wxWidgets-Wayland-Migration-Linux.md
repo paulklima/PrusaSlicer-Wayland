@@ -2,7 +2,13 @@
 
 **Date:** April 18, 2026 (analysis), April 19, 2026 (implementation verified)
 **Status:** **COMPLETE** — native Wayland support working. Original migration branch was `wayland-migration`; the current layout is `feat/wayland` combined into `release/X.Y.Z` (see `doc/FORK-RELEASE-STRATEGY.md`). Commit hashes below are from the original migration and have since been re-based.
-**Scope:** PrusaSlicer — upgrade path from current wxWidgets 3.2 fork to wxWidgets 3.2 latest / 3.3 for native Wayland support on Linux.
+**Scope:** PrusaSlicer — the *initial* native-Wayland enablement, which kept the
+wxWidgets 3.2.6 fork (GTK3 + EGL flipped on). The tables below describe that phase.
+
+> **Update:** wxWidgets has since been upgraded to **upstream 3.3.3** on the
+> stacked `feat/wx3.3` branch (shipped in `v2.9.6-wayland-wx3.3.3`). Where this
+> analysis says "3.2.6 unchanged" or lists a wx bump as advisable/future, that
+> bump is now **done**. See `doc/FORK-RELEASE-STRATEGY.md` for the current set.
 
 ---
 

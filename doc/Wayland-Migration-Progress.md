@@ -48,9 +48,10 @@ cherry-picked or reverted independently.
 
 **Why:** GTK3 + EGL are the two blockers on the wx side.
 
-**Not done here:** bumping wx version (still pinned to prusa3d fork
-@ `5462e7d` ~ 3.2.6). A wx 3.3.x bump is a separate migration — see
-`doc/wxWidgets-Wayland-Migration-Linux.md` §9.
+**Not done in *this* step:** bumping wx version (this commit kept the prusa3d
+fork @ `5462e7d` ~ 3.2.6). The wx bump was a separate, later step and **has since
+been completed** — upstream wxWidgets **3.3.3** on `feat/wx3.3` (see the "Done
+since" note below and `doc/wxWidgets-Wayland-Migration-Linux.md`).
 
 ---
 

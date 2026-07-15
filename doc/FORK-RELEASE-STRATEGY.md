@@ -149,7 +149,7 @@ cmake); `deps/CMakeLists.txt` also appends it to `DEP_CMAKE_OPTS`. Build with
 | Feature | Branch | Upstream PR? | Notes |
 |---|---|---|---|
 | Native Wayland (GTK3+EGL) + build env + CMake 4 | `feat/wayland` | yes | 4 blockers: wx GTK3/EGL, GUI_App gtk-menu-images guard, Setup.cpp GDK_BACKEND, GLEW_EGL |
-| wxWidgets 3.3.3 upgrade + API compat + warning cleanup | `feat/wx3.3` (stacked) | yes | wx 3.3.2→3.3.3; `-Wno-overloaded-virtual` scope; CMP0175 fixes |
+| wxWidgets 3.3.3 upgrade + API compat + warning cleanup | `feat/wx3.3` (stacked) | yes | Prusa 3.2.6 fork → upstream 3.3.3; `-Wno-overloaded-virtual` scope; CMP0175 fixes |
 | `PrintConfig` uninitialized `val1/val2` fix | `feat/wx3.3` | **yes — see `fix/coenums-uninitialized-val`** | one-liner, off upstream/master for a clean PR |
 | MMU wipe-tower temperature sync | `feat/mmu-temp-fix` | yes | `WipeTower.cpp/.hpp` only, gated on `m_semm` |
 | Fork identity in About / System Info | integration branch | no | `SLIC3R_FORK_ID` + `git describe` build id |
